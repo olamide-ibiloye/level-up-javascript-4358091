@@ -17,7 +17,20 @@
   <button id="green">Green</button>
 
   <script>
-    // Write your code here
+    function changeColor(color) {
+      return function() {
+        document.body.style.background = color;
+      }
+    }
+
+    const BgColorBlue = changeColor("#0f62fe");
+    const BgColorPink = changeColor("#ff7eb6");
+    const BgColorGreen = changeColor("#42be65");
+
+    document.querySelector("#blue").addEventListener('click', BgColorBlue);
+    document.querySelector("#pink").addEventListener('click', BgColorPink);
+    document.querySelector("#green").addEventListener('click', BgColorGreen);
+    
 
   </script>
 </body>

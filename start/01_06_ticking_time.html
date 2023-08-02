@@ -16,7 +16,18 @@
 
   <script>
     // Write your code here
-    
+
+    function tickingClock() {
+      const targetNode = document.querySelector("#clock");
+
+      return setInterval(() => {
+        let date = Date.now();
+        let tick = date.toLocaleString();
+        targetNode.textContent = tick;
+      }, 1000)
+    }
+
+    tickingClock()    
   </script>
 </body>
 
