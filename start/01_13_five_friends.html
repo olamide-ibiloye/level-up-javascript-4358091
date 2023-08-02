@@ -16,7 +16,23 @@
 
   <script>
     // Write your code here
-    
+    const getFiveFriends = async () => {
+      const response = await fetch('https://randomuser.me/api/?results=5');
+      const data = await response.json();
+
+      const targetNode = document.querySelector("#timeline");
+
+      data.results.forEach(friend => {
+        const image = friend.picture.medium
+        let node = document.createElement('img');
+        node.src = image
+        node.style.borderRadius = `50px`
+
+        targetNode.appendChild(node)
+      });
+    } 
+
+    getFiveFriends()
   </script>
 </body>
 
